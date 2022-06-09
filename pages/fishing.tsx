@@ -132,12 +132,12 @@ export default function Fishing() {
         
        
           setCaptainBalance(await getCaptainBalanceOf(myaddress))
-          setFishBalance(((await getFishBalanceOf(myaddress) ).toFixed(2)))
+          setFishBalance(((await getFishBalanceOf(myaddress) / 1000000000000000000).toFixed(2)))
           setYardBalance(await getYardBalanceOf(myaddress))
           const [tokenIds, myFishTotalTon,totalFishClaimable, estEggPerDay] =  await GetMyStakedCaptain(myaddress)
           setMyCaptainStake(tokenIds)
           setMyFishTotalTon(myFishTotalTon)
-          setTotalClaimable(Number((totalFishClaimable).toFixed(2)))
+          setTotalClaimable(Number((totalFishClaimable/1000000000000000000).toFixed(2)))
           setEstEggPerDay(estEggPerDay)
           setTotalTon(await getTotalTonOfAllCaptain())
           setFeedActivity(await getFeedActivity(myaddress) )
